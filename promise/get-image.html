@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous">
+    </script>
+
+    <style>
+        #image {margin-top: 5px;}
+        img {margin-right: 3px;}
+    </style>
+</head>
+<body>
+    <button id="request">Get image</button>
+
+    <div id="image"></div>
+
+    <script type="text/javascript">
+        function findImage(size) {
+            return new Promise((resolve, reject) => {
+                resolve(`https://picsum.photos/${size}`);
+            });
+        }
+
+        function setTimeoutPromise(time) {
+            return new Promise(resolve => {
+                setTimeout(resolve, time);
+            }); 
+        }
+
+        /* $('#request').click(() => {
+            findImage(200).then(imageUrl => {
+                $('#image').append(`<image src="${imageUrl}"></image>`);
+                
+                return findImage(201);
+            }).then(imageUrl => {
+                $('#image').append(`<image src="${imageUrl}"></image>`);
+            });;
+        }); */
+
+        /* $('#request').click(() => {
+            Promise.all([
+                findImage(200),
+                findImage(201),
+                findImage(202)
+            ]).then(result => {
+                $('#image').append(`<image src="${result[0]}"></image>`);
+                $('#image').append(`<image src="${result[1]}"></image>`);
+                $('#image').append(`<image src="${result[2]}"></image>`);
+            });
+        }); */
+
+        /* $('#request').click(async () => {
+            let imageUrl = await findImage(200); 
+            $('#image').append(`<image src="${imageUrl}"></image>`);
+            
+            imageUrl = await findImage(201); 
+            $('#image').append(`<image src="${imageUrl}"></image>`);
+
+            imageUrl = await findImage(202); 
+            $('#image').append(`<image src="${imageUrl}"></image>`);
+        }); */
+
+        /* $('#request').click(async () => {
+            let result = await Promise.all([
+                findImage(200),
+                findImage(201),
+                findImage(202)
+            ]);
+
+            $('#image').append(`<image src="${result[0]}"></image>`);
+            $('#image').append(`<image src="${result[1]}"></image>`);
+            $('#image').append(`<image src="${result[2]}"></image>`);
+        }); */
+
+        async function randomImg(size) {
+            for (let i = 0; i < 2; i++) {
+                let imageUrl = await findImage(size);
+            
+                $('#image').append(`<image src="${imageUrl}"></image>`);
+                await setTimeoutPromise(4000);
+            }
+        }
+
+        $('#request').click(async () => {
+            console.log('Begin');
+            const first = randomImg(200);
+            console.log('Second');
+            const second = randomImg(201);
+
+            console.log('first', first);
+            // await Promise.all()
+        });
+    </script>
+</body>
+</html>
