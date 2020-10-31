@@ -1,0 +1,75 @@
+* {
+    color: rgb(0, 0, 0);
+    margin: 0px 5px;
+}
+
+body {
+    background-color: rgb(134, 134, 134);
+}
+
+hr {
+    margin: 10px 0px;
+}
+
+.row {
+    margin-top: 10px;
+}
+
+/* background: color > image > repeat > attachment > position */
+.img-background {
+    height: 360px;
+    background-image: url("../images/img-tree.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    /* background-attachment: fixed; */
+}
+
+.img-background h1, .img-background p {
+    margin-right: 200px;
+}
+
+.img-background h1 {
+    text-shadow: 2px 2px 8px rgb(21, 228, 255);
+}
+
+.img-background p.capitalize {
+    text-transform: capitalize;
+}
+
+.img-background span {
+    /* text-decoration: overline; */
+    text-decoration: line-through;
+    /* text-decoration: underline; */
+}
+
+.line-1 {
+    padding: 10px;
+    border: 1px solid rgb(3, 253, 37);
+}
+
+.line-2 {
+    outline: 2px solid rgb(255, 94, 0);
+    outline-offset: 2px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    margin: 5px 10px 20px;
+    border: 1px solid rgb(255, 255, 0);
+}
+
+a.link-click:link, a.link-click:visited  {
+    background-color: none;
+    color: black;
+    border: 2px solid green;
+    padding: 3px 10px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a.link-click:hover, a.link-click:active {
+    background-color: green;
+    color: #fff;
+    font-weight: normal;
+    cursor: progress;
+}
