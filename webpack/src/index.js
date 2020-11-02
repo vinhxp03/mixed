@@ -1,9 +1,19 @@
-// const sum = require('./math'); // default
-import sum from './math';
-import './image';
+import imgCat from './assets/images/cat-icon.jpg'
 
-let total = sum(3, 4);
-console.log(total);
+const path = require('path');
 
+const element = document.querySelector('#h1-hello');
+element.style.color = 'green';
 
+console.log(`Hello world ahi!`);
+
+function createImgElement() {
+  const imgElement = document.createElement('img');
+  imgElement.src = imgCat;
+  imgElement.alt = 'Cat';
+
+  return imgElement;
+}
+
+document.getElementById('root').appendChild(createImgElement());
 
