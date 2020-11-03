@@ -1,4 +1,5 @@
-import imgCat from './assets/images/cat-icon.jpg'
+import './assets/css/style.css'
+import './assets/sass/style.scss'
 
 const path = require('path');
 
@@ -7,13 +8,4 @@ element.style.color = 'green';
 
 console.log(`Hello world ahi!`);
 
-function createImgElement() {
-  const imgElement = document.createElement('img');
-  imgElement.src = imgCat;
-  imgElement.alt = 'Cat';
-
-  return imgElement;
-}
-
-document.getElementById('root').appendChild(createImgElement());
 

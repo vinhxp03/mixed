@@ -1,0 +1,103 @@
+$background-color: rgb(184, 179, 179);
+$line-color: rgb(27, 12, 236);
+$big-color: rgb(180, 45, 45);
+$primary-color: rgb(0, 133, 18);
+$hover-color: rgb(214, 171, 31);
+
+// Mixin
+@mixin shiftRight($px) {
+    @if $px >= 10 {
+        @if $px > 20 {
+            margin-left: 10px;
+        } @else {
+            margin-left: $px - 5px;
+        }
+    } @else {
+        margin-left: $px;
+    }
+
+    @content;
+}
+
+// For
+@for $i from 0 to 4 {
+    #item-#{$i} {
+        color: red;
+    }
+}
+
+// List
+$sizes: 20px, 30px;
+@each $size in $sizes {
+    .icon-#{$size} {
+        font-size: $size;
+    }
+}
+
+// Map
+$font-weights: ("regular": 400, "medium": 500, "bold": 700);
+@each $name, $length in $font-weights {
+    .icon-#{$name} {
+        font-weight: $length;
+    }
+}
+
+@function ascwdith($width) {
+    @return $width * 2;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.set-width {
+    width: ascwdith(4px);
+}
+
+#box-sass {
+    margin-top: 10px;
+    padding: 10px 30px;
+    border: 1px solid $line-color;
+
+    h1 {
+        color: $big-color;
+    }
+
+    a {
+        text-decoration: none;
+        color: $primary-color;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        color: $hover-color;
+    }
+
+    ul a:hover {
+        @include shiftRight(25px) {
+            font-weight: bold;
+        };
+    }
+}
+
+%message {
+    border: solid 1px;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px 10px;
+}
+ 
+.error {
+    @extend %message;
+    background: red;
+}
+ 
+.success {
+    @extend %message;
+    background: blue;
+}
+ 
+.warning {
+    @extend %message;
+    background: yellow;
+}
