@@ -13,7 +13,12 @@ function Men(firstName, lastName) {
 
 var person = new Person();
 
+console.log('person', person);
+console.log(person.getName());
+
 Men.prototype = new Person();
+
 var men = new Men("Vinh", "Phan");
+console.log('men', men);
 
 console.log(men.getName());

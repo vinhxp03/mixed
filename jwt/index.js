@@ -4,7 +4,7 @@ require('module-alias/register');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const port = 1111;
+const port = 5090;
 
 // Import routes
 const indexUser = require('./routers/user');

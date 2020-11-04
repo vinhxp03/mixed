@@ -13,3 +13,9 @@ function call() {
 call()
 .then(result => console.log('result', result))
 .catch(error => console.log('error', error));
+
+function returnPromise() {
+    return Promise.resolve("Success");
+}
+
+console.log('returnPromise()', returnPromise());

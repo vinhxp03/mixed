@@ -16,7 +16,7 @@ function sayHi() {
     console.log('age', age);
     var name = "Lydia";
     let age = 21;
-  }
+}
   
 //   sayHi();
 // --------------------------------------------------
@@ -26,6 +26,10 @@ const shape = {
     diameter() {
         console.log('this diameter', this);
         return this.radius * 2;
+    },
+    callback: function () {
+        console.log('this callback', this);
+        return this.radius;
     },
     perimeter: () => {
         this.sy = 5;
@@ -37,6 +41,7 @@ const shape = {
   
 //   console.log('shape.diameter()', shape.diameter());
 //   console.log('shape.perimeter()', shape.perimeter());
+//   console.log('shape.callback()', shape.callback());
 // --------------------------------------------------
 
 const log = "ahihi";
