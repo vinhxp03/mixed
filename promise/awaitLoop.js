@@ -50,3 +50,17 @@ const forLoop = async () => {
 }
 
 forLoop();
+
+const forEach = async () => {
+    console.log('Start');
+    console.log('fruitList.length', fruitList.length)
+
+    fruitList.forEach(async fruit => {
+        let numFruit = await getNumFruit(fruit);
+        console.log(`numFruit - ${fruit}`, numFruit);
+    });
+
+    console.log('End');
+}
+
+forEach();
