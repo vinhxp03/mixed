@@ -1,8 +1,8 @@
 FROM node:carbon
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY . .
+COPY app /app
 
 RUN npm install
 
