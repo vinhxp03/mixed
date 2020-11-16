@@ -38,13 +38,13 @@ function pagination(currentPage, totalPage, delta = 2) {
     return rangeWithDots;
 }
 
-/*
+
 Test:
 for (let i = 1, l = 20; i <= l; i++) {
     console.log(`Selected page ${i}:`, pagination(i, l));
 }
 
-Output:
+/* Output:
 
 Selected page 1: [1, 2, 3, 4, 5, "...", 20]
 Selected page 2: [1, 2, 3, 4, 5, "...", 20]
@@ -66,4 +66,4 @@ Selected page 17: [1, "...", 15, 16, 17, 18, 19, 20]
 Selected page 18: [1, "...", 16, 17, 18, 19, 20]
 Selected page 19: [1, "...", 17, 18, 19, 20]
 Selected page 20: [1, "...", 18, 19, 20] 
-*/
+ */
