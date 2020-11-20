@@ -12,6 +12,12 @@ var Person = {
       console.log('this 002', this);
       console.log('this.name', this.name);
       console.log('this.age', this.age);
+
+      function getThis() {
+        console.log('getThis', this);
+      }
+
+      getThis();
     });
   },
   renderBind: function() {
@@ -21,6 +27,13 @@ var Person = {
       console.log('this 002', this);
       console.log('this.name', this.name);
       console.log('this.age', this.age);
+
+      function getThis() {
+        console.log('getThis', this);
+      }
+
+      getThis();
+      
     }.bind(this));
   },
   renderBindObject: function() {
@@ -41,7 +54,7 @@ var Person = {
   }
 }
 
-// Person.render();
+Person.render();
 // Person.renderBind();
-Person.renderBindObject();
+// Person.renderBindObject();
 // Person.renderEs6();
