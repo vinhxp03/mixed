@@ -4,7 +4,7 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-const User = require('@modal/user');
+const User = require('@model/user');
 const verify = require('@auth/checkToken');
 const {registerValidation, loginValidation} = require('@auth/validation');
 
@@ -138,6 +138,25 @@ router.get('/all', verify, function(req, res){
             message: error
         });
     }
-})
+});
+
+router.get('/logout', verify, async (req, res) => {
+    const db = require('@database/low');
+
+    try {
+        // Destroy token
+
+        res.send({
+            code: 200,
+            message: "Success",
+            data: 1
+        });
+    } catch (error) {
+        res.status(400).send({
+            code: 400,
+            message: error
+        });
+    }
+});
 
 module.exports = router;

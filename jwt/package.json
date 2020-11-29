@@ -24,7 +24,7 @@
   },
   "_moduleAliases": {
     "@database": "database",
-    "@modal": "modal",
+    "@model": "model",
     "@auth": "auth"
   }
 }
