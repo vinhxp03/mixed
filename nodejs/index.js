@@ -1,14 +1,28 @@
-const http = require('http');
+const express = require('express');
+const app = express();
 
-const hostname = '127.0.0.1';
-const port = 3000;
+// Library
+const Joi = require('./library/Joi');
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello, World!\n');
+app.get('/', (req, res) => {
+  res.send('Hello World!');
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+/** Joi validator */
+app.get('/joi', (req, res) => {
+  // Get param
+  let params = {
+    ...req.query
+  }
+
+  res.send({
+    code: 200,
+    message: 'Success',
+    data: Joi.validate(params)
+  });
+});
+
+const port = 3000;
+app.listen(port, () => {
+  console.log(`App listening at http://localhost:${port}`)
 });
